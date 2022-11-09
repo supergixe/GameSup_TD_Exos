@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 302692792171481250}
   - component: {fileID: 302692792171481251}
   - component: {fileID: 302692792171481248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh.Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 302692792590252285}
   - component: {fileID: 302692792590252287}
   - component: {fileID: 302692792590252284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WeaponController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 302692792940769431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProjectileAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 302692793403659942}
   - component: {fileID: 302692793403659943}
   - component: {fileID: 302692793403659936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower.Alt02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 302692793443834750}
   - component: {fileID: 302692793443834751}
   - component: {fileID: 302692793443834748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh.Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

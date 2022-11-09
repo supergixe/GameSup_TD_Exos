@@ -7,21 +7,31 @@ using UnityEngine;
 public class Blockers : MonoBehaviour
 {
 
-    [SerializeField, Range(0,10f)]
+    [SerializeField, Range(1,10f)]
     float speed;
+
+    float verification;
 
     Vector3 position;
 
     int number;
 
+    TroopTower myTower;
 
-    public void Initialyse(Vector3 myPosition, int myIndex)
+    state myState = state.passive;
+
+    enum state
+    {
+        passive,tracking,attacking
+    }
+
+
+    public void Initialyse(Vector3 myPosition, int myIndex, TroopTower myTower)
     {
         position = myPosition;
         number = myIndex;
-        print("non");
-        while(!IsArrive()) MoveTo(position);
-
+        verification = speed;
+        MoveTo(position);
     }
 
     private void MoveTo(Vector3 position)
@@ -36,6 +46,22 @@ public class Blockers : MonoBehaviour
         {
             return true;
         }
-        else return false;
+        else 
+        {
+            MoveTo(position);
+            return false; 
+        }
+    }
+
+    private void Update()
+    {
+
+        switch (myState)
+        {
+            case state.passive: IsArrive(); break;
+            case state.tracking: break;
+            case state.attacking: break;
+        } 
+        
     }
 }
