@@ -689,6 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb69ef2b3d1edc45858e7719303c647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   _weaponController: {fileID: 302692792590252287}
   _damageableDetector: {fileID: 302692793403659942}
 --- !u!114 &302692793403659942
@@ -703,6 +704,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a1ba8619da3ff498c03a05e4bde244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _allyLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
   _attackerType: 0
 --- !u!135 &302692793403659943
 SphereCollider:
