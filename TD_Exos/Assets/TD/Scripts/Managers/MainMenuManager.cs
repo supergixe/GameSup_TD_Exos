@@ -49,7 +49,7 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log("LauchLevel : " + scene);
 
-        //SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene);
     }
 
     public void SettingsEnable()
@@ -76,9 +76,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
-
-
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #endif

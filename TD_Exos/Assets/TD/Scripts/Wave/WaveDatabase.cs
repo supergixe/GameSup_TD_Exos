@@ -41,7 +41,18 @@
 			outEntity = null;
 			return false;
 		}
-	}
+
+        public float GetWaveDuration(List<WaveSet> waves)
+        {
+            float duration = 0;
+            for (int i = 0, length = waves.Count; i < length; i++)
+            {
+                Debug.Log(i);
+                duration += waves[i].GetWaveDuration();
+            }
+            return duration;
+        }
+    }
 
 #if UNITY_EDITOR
 	[CustomEditor(typeof(WaveDatabase))]
