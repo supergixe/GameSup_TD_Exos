@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 36001e906bdb33440b4f5dbf0daa6046, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 369c9ebd4e7d001469cbc91252a31fee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1037,8 +1037,8 @@ GameObject:
   - component: {fileID: 7673829379806731302}
   - component: {fileID: 7673829379806731321}
   - component: {fileID: 7673829379806731320}
-  - component: {fileID: 7673829379806731301}
   - component: {fileID: 7673829379806731300}
+  - component: {fileID: 7673829379806731301}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1130,6 +1130,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7673829379806731300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673829379806731323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53df9b5e07d0b294e98e6e4659486673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ressourcesText: {fileID: 7673829378711988791}
+  _playerResourcesAtBeginning: 0
 --- !u!114 &7673829379806731301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,19 +1158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStatsUI: {fileID: 7673829379806731300}
   ressources: 10
---- !u!114 &7673829379806731300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7673829379806731323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53df9b5e07d0b294e98e6e4659486673, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ressourcesText: {fileID: 7673829378711988791}
 --- !u!1 &7673829379808208696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1209,7 @@ GameObject:
   - component: {fileID: 7673829379844588219}
   - component: {fileID: 7673829379844588218}
   - component: {fileID: 7673829379844588216}
+  - component: {fileID: 55345275966508540}
   m_Layer: 5
   m_Name: TowerPanel
   m_TagString: Untagged
@@ -1301,6 +1303,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &55345275966508540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7673829379844588220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c650bd3b8a19cf41b40b5f039d4d7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerSlots:
+  - {fileID: 2608619855662356404}
+  - {fileID: 2608619857588646898}
 --- !u!1 &7673829380204092093
 GameObject:
   m_ObjectHideFlags: 0
