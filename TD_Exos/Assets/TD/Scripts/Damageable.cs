@@ -7,7 +7,8 @@
 		[SerializeField]
 		private int _health = 1;
 
-
+		[SerializeField]
+		private int _ressources = 0;
 
 		[SerializeField]
 		private bool _destroyIfKilled = true;
@@ -56,6 +57,7 @@
 
 		private void DoDestroy()
 		{
+			PlayerStatsUI.Instance.RessourcesUpdater(_ressources);
 			var particle = Instantiate(_deathParticle);
 			particle.transform.position = transform.position;
 			Destroy(gameObject);

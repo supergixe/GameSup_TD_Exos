@@ -62,6 +62,7 @@
 			float duration = 0;
 			for (int i = 0, length = waves.Count; i < length; i++)
 			{
+				Debug.Log(i);
 				duration += waves[i].GetWaveDuration();
 			}
 			return duration;

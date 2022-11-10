@@ -10,6 +10,9 @@ public class PlayerStatsUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _ressourcesText = null;
 
+    [SerializeField]
+    private int _playerResourcesAtBeginning = 0;
+
     private int _playerRessources = 0;
 
     private static PlayerStatsUI _instance = null;
@@ -43,7 +46,8 @@ public class PlayerStatsUI : MonoBehaviour
 
     private void Start()
     {
-        _ressourcesText.text = _playerRessources.ToString();
+        _ressourcesText.text = _playerResourcesAtBeginning.ToString();
+        _playerRessources = _playerResourcesAtBeginning;
     }
 
     public void RessourcesUpdater(int ressources)
