@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GSGD1;
 
 
 [SelectionBase]
-public class Blockers : MonoBehaviour
+public class Blockers : Damageable
 {
 
     [SerializeField, Range(1,10f)]
     float speed;
 
     float verification;
+
+    [SerializeField]
+    DamageableDetector _damageableDetector;
+
+    [SerializeField]
+    WeaponController _weaponController;
 
     Vector3 position;
 
@@ -30,6 +37,7 @@ public class Blockers : MonoBehaviour
     {
         position = myPosition;
         number = myIndex;
+        this.myTower = myTower;
         verification = speed;
         MoveTo(position);
     }
@@ -58,13 +66,17 @@ public class Blockers : MonoBehaviour
 
     private void Update()
     {
+        if (_damageableDetector.HasAnyDamageableInRange() == true)
+        {
+            Damageable damageableTarget = _damageableDetector.GetNearestDamageable();
 
+            _weaponController.LookAtAndFire(damageableTarget.GetAimPosition());
+        }
         switch (myState)
         {
             case state.passive: IsArrive(); return;
             case state.tracking: return;
             case state.attacking: return;
-        } 
-        
+        }
     }
 }

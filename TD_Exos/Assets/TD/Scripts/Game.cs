@@ -40,7 +40,7 @@ public class Game : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Mouse0) && selectedTower != null)
         {
             Debug.Log("J'ai choisis");
-            selectedTower.OnTowerAction(hit, ray);
+            selectedTower.OnTowerAction();
             selectedTower = null;
         }
     }

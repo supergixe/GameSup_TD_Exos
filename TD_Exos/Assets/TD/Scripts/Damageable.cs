@@ -5,7 +5,7 @@
 	public class Damageable : MonoBehaviour
 	{
 		[SerializeField]
-		private int _health = 1;
+		protected private int _health = 1;
 
 		[SerializeField]
 		private int _ressources = 0;

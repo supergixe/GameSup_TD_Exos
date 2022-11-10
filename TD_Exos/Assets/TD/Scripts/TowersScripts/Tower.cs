@@ -28,7 +28,7 @@
         }
 
 
-		abstract public void OnTowerAction(RaycastHit hit, Ray ray);
+		abstract public void OnTowerAction();
 
 		virtual public void SelectingTower()
         {
