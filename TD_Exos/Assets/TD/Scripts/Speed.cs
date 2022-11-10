@@ -40,5 +40,6 @@ public class Speed : MonoBehaviour
         }
 
         _speedUiText.text = "Speed x" + Time.timeScale.ToString();
+        PauseManager.Instance.SetTimeScale(((int)Time.timeScale));
     }
 }

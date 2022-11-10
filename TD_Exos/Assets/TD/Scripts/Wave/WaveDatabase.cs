@@ -47,6 +47,7 @@
             float duration = 0;
             for (int i = 0, length = waves.Count; i < length; i++)
             {
+				PlayerStatsUI.Instance.GetRemainingTime(waves[i].GetWaveDuration());
                 Debug.Log(i);
                 duration += waves[i].GetWaveDuration();
             }
