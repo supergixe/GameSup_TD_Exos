@@ -29,7 +29,7 @@
 
 		public void StartWave(Wave wave)
 		{
-			_wave = new Wave(wave);
+            _wave = new Wave(wave);
 			_timer.Set(wave.DurationBetweenSpawnedEntity).Start();
 			WaveStarted?.Invoke(this, wave);
 			InstantiateNextWaveElement();
