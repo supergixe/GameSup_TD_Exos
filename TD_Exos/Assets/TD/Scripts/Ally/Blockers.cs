@@ -33,7 +33,10 @@ public class Blockers : MonoBehaviour
         verification = speed;
         MoveTo(position);
     }
-
+    public void UpdatePosition(Vector3 myPosition)
+    {
+        position = myPosition;
+    }
     private void MoveTo(Vector3 position)
     {
         Vector3 movement = (position - transform.position).normalized * speed * Time.deltaTime;
@@ -58,9 +61,9 @@ public class Blockers : MonoBehaviour
 
         switch (myState)
         {
-            case state.passive: IsArrive(); break;
-            case state.tracking: break;
-            case state.attacking: break;
+            case state.passive: IsArrive(); return;
+            case state.tracking: return;
+            case state.attacking: return;
         } 
         
     }

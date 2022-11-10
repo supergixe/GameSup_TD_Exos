@@ -7,8 +7,6 @@
 		[SerializeField]
 		private int _health = 1;
 
-
-
 		[SerializeField]
 		private bool _destroyIfKilled = true;
 

@@ -280,7 +280,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3032
+  m_VersionIndex: 3041
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -559,7 +559,7 @@ MonoBehaviour:
   - {fileID: 4460305011463418235}
   - {fileID: 2972824934882054203}
   - {fileID: 6334972007851587297}
-  flagPosition: {fileID: 5163393402990034466}
+  flagPosition: {fileID: 5491189196407035781}
   floorAvailable: {fileID: 3921654007027639638}
 --- !u!1 &5491189196407035781
 GameObject:
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1618
+  m_VersionIndex: 1627
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
