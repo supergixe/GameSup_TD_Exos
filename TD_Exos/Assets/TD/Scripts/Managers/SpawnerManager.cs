@@ -60,7 +60,7 @@ namespace GSGD1
 
 				for (int i = 0, length = _spawners.Count; i < length; i++)
 				{
-					if (i >= waves.Count)
+                    if (i >= waves.Count)
 					{
 						Debug.LogWarningFormat("{0}.StartNewWaveSet() There are more spawner ({1}) than wave ({2}), discarding wave.", GetType().Name, _spawners.Count, waves.Count);
 						break;
@@ -78,8 +78,8 @@ namespace GSGD1
 
 					WaveStatusChanged?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
 					WaveStatusChanged_UnityEvent?.Invoke(this, SpawnerStatus.WaveRunning, _currentWaveRunning);
-				}
-			}
+                }
+            }
 			else
 			{
 				// No waves left : end game
@@ -98,7 +98,7 @@ namespace GSGD1
 			// should we run a new wave?
 			if (_autoStartNextWaves == true && _currentWaveRunning <= 0)
 			{
-				StartNewWaveSet();
+                StartNewWaveSet();
 			}
 		}
 	}
