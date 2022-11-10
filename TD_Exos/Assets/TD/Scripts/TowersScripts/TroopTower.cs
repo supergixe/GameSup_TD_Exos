@@ -15,15 +15,13 @@ public class TroopTower : Tower
     [SerializeField]
     LayerMask _layerMask = 0;
 
-    bool isSelected = false;
-
     private Blockers[] myBlockers = new Blockers[3];
 
     [SerializeField]
-    Transform[] positions = new Transform[3];
+    GameObject[] positions = new GameObject[3];
 
     [SerializeField]
-    Transform flagPosition;
+    GameObject flagPosition;
 
     [SerializeField]
     GameObject floorAvailable;
@@ -35,6 +33,9 @@ public class TroopTower : Tower
 
     private void Awake()
     {
+        //myManager.AddTower(this);
+        //myManager.SetIndex(this);
+        Debug.Log(index);
         for (int i = 0; i < myBlockers.Length; i++)
         {
             print(myBlockers.Length);
@@ -46,50 +47,39 @@ public class TroopTower : Tower
     {
         Blockers currentBlocker = Instantiate(blockers);
         currentBlocker.transform.position = this.transform.position;
-        currentBlocker.Initialyse(positions[index].position, index, this);
+        currentBlocker.Initialyse(positions[index].transform.position, index, this);
         myBlockers[index] = currentBlocker;
     }
 
-    bool CanSelectTower()
+    void MoveFlag(RaycastHit hit, Ray ray)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        //if(Physics.Raycast(ray,out hit, float.MaxValue, _layerMask))
-        if(Physics.Raycast(ray,out hit, float.MaxValue, layerTower))
-        {
-            print("yeuxtevois");
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    void MoveFlag()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, float.MaxValue, layerFloor))
         {
-            flagPosition.position = hit.point;
-            
+            flagPosition.transform.position = hit.point;
+            print(flagPosition.transform.position);
+            for (int i = 0; i < myBlockers.Length; i++)
+            {
+                myBlockers[i].UpdatePosition(positions[i].transform.position);
+            }
+            isSelected = false;
+            floorAvailable.SetActive(false);
         }
         else
         {
-            
+            isSelected = false;
+            floorAvailable.SetActive(false);
         }
     }
-    void SelectingTower()
+
+    public override void OnTowerAction(RaycastHit hit, Ray ray)
     {
-        if (CanSelectTower())
-        {
-            print("ça marche !");
+        MoveFlag(hit, ray);
+    }
+    override public void SelectingTower()
+    {
             isSelected = true;
             floorAvailable.SetActive(true);
-        }
     }
 
     public float SpawningTimer(float customSpawnRate = 10, int index = 0) 
@@ -105,21 +95,5 @@ public class TroopTower : Tower
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            if (!isSelected)
-            {
-                SelectingTower();
-                print("Click !");
-            }
-            else
-            {
-                MoveFlag();
-            }
-            
 
-        }
-    }
 }

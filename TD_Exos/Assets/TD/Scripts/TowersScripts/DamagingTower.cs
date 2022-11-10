@@ -17,7 +17,17 @@
 		[SerializeField]
 		private DamageableDetector _damageableDetector = null;
 
-		private void Update()
+        public override void OnTowerAction(RaycastHit hit, Ray ray)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void SelectingTower()
+        {
+            base.SelectingTower();
+        }
+
+        private void Update()
 		{
 			if (_damageableDetector.HasAnyDamageableInRange() == true)
 			{

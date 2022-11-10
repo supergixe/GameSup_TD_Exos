@@ -8,9 +8,8 @@
 		[System.NonSerialized]
 		private List<Damageable> _damageablesInRange = new List<Damageable>();
 
-		const int _enemyLayerMask = 1 << 9;
-
-		const int _allyLayerMask = 1 << 8;
+        [SerializeField]
+		LayerMask _enemyLayerMask, _allyLayerMask;
 
 		enum AttackerType
         {
@@ -59,12 +58,13 @@
 		private void OnTriggerEnter(Collider other)
 		{
 			Damageable damageable = other.GetComponentInParent<Damageable>();
-
+			Debug.Log((1 << other.gameObject.layer & _enemyLayerMask) != 0);
+			Debug.Log((1 << other.gameObject.layer & _allyLayerMask) == 0);
 			if (damageable != null && _damageablesInRange.Contains(damageable) == false)
 			{
 				if( AttackerType.Tower == _attackerType)
                 {
-					if(other.GetComponent<LayerMask>().value == _enemyLayerMask)
+					if((1 << other.gameObject.layer & _enemyLayerMask) != 0)
                     {
 						damageable.DamageTaken -= Damageable_OnDamageTaken;
 						damageable.DamageTaken += Damageable_OnDamageTaken;
@@ -73,7 +73,7 @@
 				}
 				else if(AttackerType.Enemy == _attackerType)
                 {
-					if (other.GetComponent<LayerMask>().value == _allyLayerMask)
+					if ((1 << other.gameObject.layer & _allyLayerMask) == 0)
 					{
 						damageable.DamageTaken -= Damageable_OnDamageTaken;
 						damageable.DamageTaken += Damageable_OnDamageTaken;
