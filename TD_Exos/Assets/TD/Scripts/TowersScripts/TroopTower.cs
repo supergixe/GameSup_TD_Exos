@@ -51,9 +51,10 @@ public class TroopTower : Tower
         myBlockers[index] = currentBlocker;
     }
 
-    void MoveFlag(RaycastHit hit, Ray ray)
+    void MoveFlag()
     {
-
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
         if (Physics.Raycast(ray, out hit, float.MaxValue, layerFloor))
         {
             flagPosition.transform.position = hit.point;
@@ -72,9 +73,9 @@ public class TroopTower : Tower
         }
     }
 
-    public override void OnTowerAction(RaycastHit hit, Ray ray)
+    public override void OnTowerAction()
     {
-        MoveFlag(hit, ray);
+        MoveFlag();
     }
     override public void SelectingTower()
     {

@@ -15,6 +15,9 @@ public class PlayerStatsUI : MonoBehaviour
 
     private int _playerRessources = 0;
 
+    [SerializeField]
+    private float _remainingTime = 0;
+
     private static PlayerStatsUI _instance = null;
     public static PlayerStatsUI Instance
     {
@@ -63,5 +66,12 @@ public class PlayerStatsUI : MonoBehaviour
             _playerRessources = 0;
             RessourcesUpdater(_playerRessources);
         }
+    }
+
+    public void GetRemainingTime(float remainingTime)
+    {
+        _remainingTime = remainingTime;
+        Debug.Log(_remainingTime);
+
     }
 }

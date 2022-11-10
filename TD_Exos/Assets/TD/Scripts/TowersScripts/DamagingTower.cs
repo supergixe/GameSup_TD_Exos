@@ -17,7 +17,7 @@
 		[SerializeField]
 		private DamageableDetector _damageableDetector = null;
 
-        public override void OnTowerAction(RaycastHit hit, Ray ray)
+        public override void OnTowerAction()
         {
             throw new System.NotImplementedException();
         }
